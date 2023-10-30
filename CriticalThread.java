@@ -47,7 +47,6 @@ public class CriticalThread extends Thread {
             e.printStackTrace();
         }
         table.changeState(nThread + 1, 6);
-        System.out.println("Killed " + this.nThread);
     }
 
     public void kill() {
