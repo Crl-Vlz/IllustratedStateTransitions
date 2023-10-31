@@ -12,7 +12,7 @@ public class Window extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Table table = new Table();
-        this.add(table);
+        this.getContentPane().add(table);
         for (int i = 0; i < ths.length; i++) {
             table.addThread(ths[i]);
             ths[i].setTable(table);

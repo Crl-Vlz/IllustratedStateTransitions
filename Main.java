@@ -20,6 +20,7 @@ public class Main {
             ths[i] = new CriticalThread(lobby, nWait, i);
         }
 
+        new Info();
         new Window(ths, "Thread States");
     }
 
