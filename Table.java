@@ -81,6 +81,13 @@ public class Table extends JPanel {
         panels.get(row * this.cols + col).setBackground(Color.GREEN);
     }
 
+    public void changeState(int row, int col, Color color) {
+        for (int i = 0; i < this.cols; i++) {
+            panels.get(i + this.cols * row).setBackground(Color.WHITE);
+        }
+        panels.get(row * this.cols + col).setBackground(color);
+    }
+
     public void changeState(int row, String val) {
         accesses.get(row).setText(val);
     }

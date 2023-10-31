@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 public class CriticalThread extends Thread {
 
     public WaitingRoom lobby;
@@ -26,7 +28,7 @@ public class CriticalThread extends Thread {
     public void run() {
         while (isAlive) {
 
-            table.changeState(nThread + 1, 3);
+            table.changeState(nThread + 1, 3, Color.BLUE);
 
             synchronized (lobby) {
                 this.accesses++;
@@ -40,13 +42,13 @@ public class CriticalThread extends Thread {
             }
 
         }
-        table.changeState(nThread + 1, 5);
+        table.changeState(nThread + 1, 5, Color.ORANGE);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        table.changeState(nThread + 1, 6);
+        table.changeState(nThread + 1, 6, Color.RED);
     }
 
     public void kill() {
