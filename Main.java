@@ -19,8 +19,8 @@ public class Main {
         for (int i = 0; i < ths.length; i++) {
             ths[i] = new CriticalThread(lobby, nWait, i);
         }
-
         new Info();
+
         new Window(ths, "Thread States");
     }
 
